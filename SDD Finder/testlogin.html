@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Log in</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background: url(images/UMAKbg.jpg) no-repeat;
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+        }
+
+        .body1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            gap: 130px;
+        }
+
+        .wrapper {
+            width: 420px;
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, .2);
+            backdrop-filter: blur(9px);
+            color: #fff;
+            border-radius: 12px;
+            padding: 30px 40px;
+        }
+
+        .wrapper h1 {
+            font-size: 36px;
+            text-align: center;
+        }
+
+        .wrapper.login-wrapper {
+            margin-left: 20px;
+        }
+
+        .input-box {
+            position: relative;
+            width: 100%;
+            height: 50px;
+            margin: 30px 0;
+        }
+
+        .input-box input {
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            border: 2px solid rgba(255, 255, 255, .2);
+            border-radius: 40px;
+            font-size: 16px;
+            color: #fff;
+            padding: 20px 45px 20px 20px;
+        }
+
+        .input-box input::placeholder {
+            color: #fff;
+        }
+
+        .input-box i {
+            position: absolute;
+            right: 20px;
+            top: 30%;
+            transform: translate(-50%);
+            font-size: 20px;
+        }
+
+        .wrapper .submit-btn {
+            width: 100%;
+            height: 45px;
+            background: #fff;
+            border: none;
+            outline: none;
+            border-radius: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+            transition: 800ms;
+            font-size: 16px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .wrapper .submit-btn:hover {
+            cursor: pointer;
+            color: #FFDF00;
+            background-color: rgb(0, 57, 143);
+            transition: 400ms;
+        }
+
+        .wrapper .register-link, .wrapper .login-link {
+            font-size: 14.5px;
+            text-align: center;
+            margin: 20px 0 15px;
+        }
+
+        .register-link p a, .login-link p a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .register-link p a:hover, .login-link p a:hover {
+            text-decoration: underline;
+        }
+
+        .offimg {
+            margin-top: 20px;
+            margin-left: 20px;
+            width: 70px;
+            position: sticky;
+            position: -webkit-sticky;
+        }
+
+        .offimg2 {
+            margin-top: 20px;
+            margin-left: 10px;
+            width: 70px;
+            position: sticky;
+            position: -webkit-sticky;
+            border-radius: 50px;
+        }
+
+        .offimg3 {
+            margin-top: 20px;
+            margin-left: 10px;
+            width: 70px;
+            position: sticky;
+            position: -webkit-sticky;
+        }
+
+        .navpass {
+            position: sticky;
+            position: fixed;
+        }
+
+
+
+        .Reg:hover {
+          color: #FFDF00;
+          transition: 0.5s;
+        }
+
+    </style>
+</head>
+<body>
+<nav class="navpass">
+    <img class="offimg" src="images/UMaklogo.png" alt="">
+    <img class="offimg3" src="images/HSUlogo.webp" alt="">
+    <img class="offimg2" src="images/SDDlogo.png" alt="">
+</nav>
+
+<div class="body1">
+    <div class="container">
+
+    
+
+<div class="wrapper login-wrapper">
+    <form id="login-form" class="form">
+        <h1>Log in</h1>
+        <div class="input-box">
+            <input type="email" id="email" placeholder="Email" required>
+            <i class='bx bxs-user'></i>
+        </div>
+        <div class="input-box">
+            <input type="password" id="password" placeholder="Password" required>
+            <i class='bx bxs-lock-alt'></i>
+        </div>
+        <button type="submit" class="submit-btn" id="submit">Log in</button>
+        <div class="register-link">
+          <p>Dont have an Acoount? <a href="index.html"> <span class="Reg">Register here</span></a></p>
+      </div>
+    </form>
+</div>
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script type="module" defer>
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js";
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyBdvh8Rqcj2i6RKse3Yix3mQdhM1VhH4WE",
+  authDomain: "login-sdd-finder.firebaseapp.com",
+  projectId: "login-sdd-finder",
+  storageBucket: "login-sdd-finder.appspot.com",
+  messagingSenderId: "586090597795",
+  appId: "1:586090597795:web:4db0d181a5fe23525a5e16"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+// Function to validate email format
+function isValidEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+
+const submit = document.getElementById('submit');
+submit.addEventListener("click", function(event) {
+  event.preventDefault();
+
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+
+  if (!isValidEmail(email)) {
+    alert("Invalid email format. Please enter a valid email address.");
+    return;
+  }
+
+  signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed up 
+      const user = userCredential.user;
+      alert("Nice");
+      window.location.href = "Home.html";
+      // You can redirect the user or do other actions here
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      alert(errorMessage);
+    });
+});
+
+
+
+
+  </script>
+
+<!--<script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /*
+    let users = {
+        "user1": "123",
+        "user2": "456",
+        "user3": "789"
+    };
+
+    function auth() {
+        var user = document.getElementById("login-user").value;
+        var password = document.getElementById("login-password").value;
+        if (users[user] && users[user] === password) {
+            window.location.assign("Home.html");
+            alert("Login Successfully. Welcome to University of Makati (HSU) S.D.D Finder");
+        } else {
+            alert("Invalid Information. Try again.");
+        }
+    }
+
+    function register() {
+        var newUser = document.getElementById("register-user").value;
+        var newPassword = document.getElementById("register-password").value;
+        if (users[newUser]) {
+            alert("Username already exists. Try a different one.");
+        } else {
+            users[newUser] = newPassword;
+            alert("Account created successfully. You can now log in.");
+            // Display the updated users object in the console for demonstration purposes
+            console.log("Updated users:", JSON.stringify(users));
+            showLogin();
+        }
+    }
+
+    function showRegister() {
+        document.getElementById("login-form").style.display = "none";
+        document.getElementById("register-form").style.display = "block";
+    }
+
+    function showLogin() {
+        document.getElementById("register-form").style.display = "none";
+        document.getElementById("login-form").style.display = "block";
+    } */
+
+    
+</script>
+-->
+</body>
+</html>

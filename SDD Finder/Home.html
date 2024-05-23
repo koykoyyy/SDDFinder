@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-HBN5qGiRXVmV4KDO8jsI2t+xzf8+gN3lc9uyLkdjAD1MSsRjVvBnRnG9eAiGJIfk" crossorigin="anonymous">
+  <style>
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    form {
+      width: 200%;
+      max-width: 1000px; 
+      display: flex;
+      flex-direction: row; 
+      flex-wrap: wrap; 
+      justify-content: space-between;
+    }
+    .form-row {
+      flex: 1; 
+      margin-right: 30px; 
+    }
+    label {
+      display: block;
+    }
+    input[type="text"],
+    button[type="submit"] {
+      width: 100%;
+      padding: 5px; 
+      box-sizing: border-box; 
+      margin-bottom: 21px; 
+    }
+    .help-icon {
+      margin-left: auto; 
+    }
+
+    .content {
+  padding: 20px;
+  height: 2000px;
+}
+
+.container {
+  width: 100%; /* Set container width to 100% */
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 0px;
+  color: #333;
+}
+/*
+h6 {
+  margin-top: 0px;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #009e08;
+}*/
+
+form {
+  margin-bottom: 20px;
+}
+
+.form-row {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input,
+select {
+  width: calc(100% - 22px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 6px;
+  text-align: left;
+}
+
+th {
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+th:hover {
+  background-color: #0056b3;
+}
+
+.deleteBtn {
+  background-color: rgb(235, 37, 37);
+}
+
+.deleteBtn:hover {
+  transition: 500ms;
+  background-color: rgb(195, 17, 17);
+}
+
+.search-bar-process {
+  max-width: 970px;
+  margin-top: 6px;
+  margin-bottom: 8px;
+  margin-right: 25px;
+  padding-top: 13px;
+  padding-bottom: 8px;
+}
+
+.pending {
+background-color: rgb(255, 213, 0);
+}
+
+/* Add this CSS to your stylesheet */
+.submit-button {
+  padding: 15px 20px; /* Adjust padding as needed */
+  font-size: 16px; /* Keep font size */
+  max-width: 970px; /* Set a specific width for the button */
+}
+
+
+
+
+
+
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background-color: rgb(0, 57, 143);
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 60px;
+  margin-right: 15px;
+}
+
+.logo-title {
+  color: #fff;
+  font-size: 25px;
+  margin: 0;
+}
+.sdd-logo {
+  width: 60px;
+  margin-right: 15px;
+  border-radius: 50px;
+}
+
+.alogo {
+  text-decoration: none;
+}
+
+
+
+.help-icon {
+  text-decoration: none;
+  color: white;
+  transition: 400ms;
+  cursor: pointer;
+}
+.help-icon:hover {
+  color: rgb(255, 238, 0);
+  transition: 600ms;
+  text-decoration: underline;
+}
+  </style>
+</head>
+<body>
+  
+  <div class="navbar">
+    <div class="logo">
+      <a class="alogo" onclick="window.location.reload" href="">
+        <img src="Official UMak Logo (1).png" alt="Logo">
+        <img class="sdd-logo" src="S.D.D LOGO.png" alt="Logo">
+        <img src="Higher-School-ng-Umak-logo-1.webp" alt="Logo">
+      </a>
+      <a class="alogo" onclick="window.location.reload" href="">
+        <h1 class="logo-title">S.D.D <span style="font-weight: 400; font-size: 18px;">Finder</span></h1>
+      </a>
+    </div>
+    <a class="help-icon" onclick="help()">Need Help?</a>
+  </div>
+  
+  <div class="content">
+    <div class="container">
+      <h1 style="font-family: Georgia, 'Times New Roman', Times, serif;">S.D.D Finder</h1>
+     
+      <hr>
+      <hr>
+      <form id="registrationForm">
+        <div class="form-row">
+          <label for="studentID">Student ID:</label>
+          <input type="text" id="studentID" name="studentID" placeholder="Enter student ID">
+        </div>
+        <div class="form-row">
+          <label for="fullName">Name:</label>
+          <input type="text" id="fullName" name="fullName" placeholder="Last, First, Middle Intial">
+        </div>
+        <div class="form-row">
+          <label for="gradeandsection">Grade and Section:</label>
+          <input type="text" id="gradeandsection" name="gradeandsection" placeholder="Enter Grade and Section">
+        </div>  
+        <div class="form-row">
+          <label for="schoolYear">School Year:</label>
+          <input type="text" id="schoolYear" name="schoolYear" placeholder="Enter school year">
+        </div>
+        <div class="form-row">
+          <label for="learnerRefNumber">LRN:</label>
+          <input type="text" id="learnerRefNumber" name="learnerRefNumber" placeholder="Enter LRN">
+        </div>  
+
+        
+        <button type="submit" class="submit-button">Submit</button>
+      </form>
+      <input class="search-bar-process" type="text" id="searchInput" placeholder="Search">
+      <table id="userTable">
+        <thead>
+          <tr>
+            <th onclick="sortTable(0)">Student I.D</th>
+            <th onclick="sortTable(1)">Name</th>
+            <th onclick="sortTable(2)">Grade and Section</th>
+            <th onclick="sortTable(3)">School year</th>
+            <th onclick="sortTable(4)">Learner Reference Number</th>
+            <th onclick="sortTable(5)">Remarks</th>
+            <th>Comments</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  
+  <script>
+    const tbodyEl = document.querySelector("tbody");
+    const tableEl = document.querySelector("table");
+    const searchInput = document.getElementById("searchInput");
+
+    window.addEventListener("load", () => {
+      const savedData = JSON.parse(localStorage.getItem("userData"));
+      if (savedData) {
+        savedData.forEach(data => addTableRow(data));
+      }
+    });
+
+    function addTableRow(data) {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${data.studentID}</td>
+        <td>${data.fullName}</td>
+        <td>${data.gradeandsection}</td>
+        <td>${data.schoolYear}</td>
+        <td>${data.learnerRefNumber}</td>
+        <td>
+          <select class="remarks" onchange="changeBgColor(this)">
+            <option value="released" ${data.remarks === "released" ? "selected" : ""}>Released</option>
+            <option value="unreleased" ${data.remarks === "unreleased" ? "selected" : ""}>Unreleased</option>
+          </select>
+        </td>
+        <td>${data.comments || ''}</td>
+        <td><button class="editBtn">Edit</button></td>
+        <td><button class="deleteBtn">Delete</button></td>
+      `;
+      tbodyEl.appendChild(tr);
+
+      const remarksCell = tr.querySelector("td:nth-child(6)");
+      setBgColor(remarksCell, data.remarks);
+
+      const selectEl = tr.querySelector("select.remarks");
+      selectEl.addEventListener("change", function () {
+        const rowIndex = Array.from(tr.parentNode.children).indexOf(tr);
+        updateLocalStorageRemarks(rowIndex, this.value);
+        setBgColor(remarksCell, this.value);
+      });
+    }
+
+    function updateLocalStorageRemarks(rowIndex, remarks) {
+      const savedData = JSON.parse(localStorage.getItem("userData"));
+      savedData[rowIndex].remarks = remarks;
+      localStorage.setItem("userData", JSON.stringify(savedData));
+    }
+
+    function saveToLocalStorage() {
+      const data = [];
+      const rows = tbodyEl.querySelectorAll("tr");
+      rows.forEach(row => {
+        const studentID = row.querySelector("td:nth-child(1)").textContent;
+        const fullName = row.querySelector("td:nth-child(2)").textContent;
+        const gradeandsection = row.querySelector("td:nth-child(3)").textContent;
+        const schoolYear = row.querySelector("td:nth-child(4)").textContent;
+        const learnerRefNumber = row.querySelector("td:nth-child(5)").textContent;
+        const remarks = row.querySelector("select.remarks").value;
+        const comments = row.querySelector("td:nth-child(7)").textContent;
+        data.push({
+          studentID,
+          fullName,
+          schoolYear,
+          learnerRefNumber,
+          gradeandsection,
+          remarks,
+          comments
+        });
+      });
+      localStorage.setItem("userData", JSON.stringify(data));
+    }
+
+    function onDeleteRow(e) {
+      if (!e.target.classList.contains("deleteBtn")) {
+        return;
+      }
+      const btn = e.target;
+      const row = btn.closest("tr");
+      const confirmation = confirm("Are you sure you want to delete?");
+      if (confirmation) {
+        row.remove();
+        saveToLocalStorage();
+      }
+    }
+
+    tableEl.addEventListener("click", onEditRow);
+
+    function onEditRow(e) {
+      if (e.target.classList.contains("editBtn")) {
+        const btn = e.target;
+        const row = btn.closest("tr");
+        const cells = row.querySelectorAll("td");
+    
+        for (let i = 0; i < cells.length - 4; i++) {
+          const cell = cells[i];
+          const text = cell.textContent;
+          cell.innerHTML = `<input type="text" value="${text}">`;
+        }
+
+        const commentsCell = cells[6];
+        const commentsText = commentsCell.textContent;
+        commentsCell.innerHTML = `<textarea>${commentsText}</textarea>`;
+    
+        btn.textContent = "Save";
+        btn.classList.remove("editBtn");
+        btn.classList.add("saveBtn");
+      } else if (e.target.classList.contains("saveBtn")) {
+        const btn = e.target;
+        const row = btn.closest("tr");
+        const cells = row.querySelectorAll("td");
+    
+        const remarksCell = cells[5];
+        const remarksBgColor = remarksCell.style.backgroundColor;
+    
+        for (let i = 0; i < cells.length - 4; i++) {
+          const cell = cells[i];
+          const input = cell.querySelector("input");
+          cell.textContent = input.value;
+        }
+
+        const commentsCell = cells[6];
+        const commentsTextarea = commentsCell.querySelector("textarea");
+        commentsCell.textContent = commentsTextarea.value;
+    
+        remarksCell.style.backgroundColor = remarksBgColor;
+    
+        btn.textContent = "Edit";
+        btn.classList.remove("saveBtn");
+        btn.classList.add("editBtn");
+        saveToLocalStorage();
+      }
+    }
+
+    const registrationForm = document.querySelector("#registrationForm");
+    registrationForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const studentID = document.getElementById("studentID").value;
+      const fullName = document.getElementById("fullName").value;
+      const gradeandsection = document.getElementById("gradeandsection").value;
+      const schoolYear = document.getElementById("schoolYear").value;
+      const learnerRefNumber = document.getElementById("learnerRefNumber").value;
+
+      const data = {
+        studentID,
+        fullName,
+        gradeandsection,
+        schoolYear,
+        learnerRefNumber,
+        remarks: "unreleased",
+        comments: ""
+      };
+
+      addTableRow(data);
+      saveToLocalStorage();
+      registrationForm.reset();
+    });
+
+    searchInput.addEventListener("input", function () {
+      const filter = searchInput.value.toUpperCase();
+      const rows = tbodyEl.querySelectorAll("tr");
+
+      rows.forEach(row => {
+        const studentID = row.querySelector("td:nth-child(1)").textContent;
+        const fullName = row.querySelector("td:nth-child(2)").textContent;
+        const gradeandsection = row.querySelector("td:nth-child(3)").textContent;
+        const schoolYear = row.querySelector("td:nth-child(4)").textContent;
+        const learnerRefNumber = row.querySelector("td:nth-child(5)").textContent;
+
+        if (studentID.toUpperCase().includes(filter) ||
+          fullName.toUpperCase().includes(filter) ||
+          gradeandsection.toUpperCase().includes(filter) ||
+          schoolYear.toUpperCase().includes(filter) ||
+          learnerRefNumber.toUpperCase().includes(filter)) {
+          row.style.display = "";
+        } else {
+          row.style.display = "none";
+        }
+      });
+    });
+
+    tableEl.addEventListener("click", onDeleteRow);
+
+    function sortTable(n) {
+      const table = document.getElementById("userTable");
+      let switching = true;
+      let shouldSwitch, switchCount = 0, dir = "asc";
+
+      while (switching) {
+        switching = false;
+        const rows = table.rows;
+
+        for (let i = 1; i < rows.length - 1; i++) {
+          shouldSwitch = false;
+          const x = rows[i].getElementsByTagName("TD")[n];
+          const y = rows[i + 1].getElementsByTagName("TD")[n];
+          if (dir === "asc") {
+            if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+              shouldSwitch = true;
+              break;
+            }
+          } else if (dir === "desc") {
+            if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+              shouldSwitch = true;
+              break;
+            }
+          }
+        }
+
+        if (shouldSwitch) {
+          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+          switching = true;
+          switchCount++;
+        } else {
+          if (switchCount === 0 && dir === "asc") {
+            dir = "desc";
+            switching = true;
+          }
+        }
+      }
+    }
+
+    function changeBgColor(selectElement) {
+      const value = selectElement.value;
+      const td = selectElement.parentElement;
+
+      if (value === "released") {
+        td.style.backgroundColor = "green";
+      } else if (value === "unreleased") {
+        td.style.backgroundColor = "red";
+      } else {
+        td.style.backgroundColor = "";
+      }
+    }
+
+    function setBgColor(td, value) {
+      if (value === "released") {
+        td.style.backgroundColor = "green";
+      } else if (value === "unreleased") {
+        td.style.backgroundColor = "red";
+      } else {
+        td.style.backgroundColor = "";
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>
